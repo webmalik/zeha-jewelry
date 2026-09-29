@@ -1,0 +1,9 @@
+{% render 'zeha-assets' %}
+<div class="zeha-scope"><section aria-labelledby="final-title-{{ section.id }}" class="final-cta"><div class="container final-cta-inner reveal"><span class="eyebrow">{{ section.settings.eyebrow | escape }}</span><h2 id="final-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2><p>{{ section.settings.text | escape }}</p><a class="button button-primary" href="{{ section.settings.button_link | default: '#bestsellers' }}">{{ section.settings.button_label | escape }} <span aria-hidden="true">↗</span></a></div></section></div>
+{% schema %}
+{
+  "name":"Zeha — Final CTA",
+  "settings":[{"type":"text","id":"eyebrow","label":"Eyebrow","default":"Finde das Schmuckstück, das zu dir passt"},{"type":"text","id":"heading","label":"Heading","default":"Trage, was dir wichtig ist."},{"type":"textarea","id":"text","label":"Text","default":"Entdecke bedeutungsvolle orientalische Signaturstücke und elegante Alltagsklassiker für deinen Lebensstil."},{"type":"text","id":"button_label","label":"Button","default":"Bedeutungsvollen Schmuck entdecken"},{"type":"url","id":"button_link","label":"Button link"}],
+  "presets":[{"name":"Zeha — Final CTA"}]
+}
+{% endschema %}

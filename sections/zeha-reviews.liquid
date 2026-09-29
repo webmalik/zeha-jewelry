@@ -1,0 +1,23 @@
+{% render 'zeha-assets' %}
+<div class="zeha-scope">
+<section aria-labelledby="reviews-title-{{ section.id }}" class="reviews" data-reviews="{% if section.settings.demo %}demo{% else %}real{% endif %}" id="reviews">
+<div class="container">
+<div class="section-heading reveal"><div><span class="eyebrow">{{ section.settings.eyebrow | escape }}</span><h2 id="reviews-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2></div><div>{% if section.settings.demo %}<p class="review-preview-note"><strong>{{ section.settings.demo_label | escape }}</strong>{{ section.settings.demo_text | escape }}</p>{% endif %}</div></div>
+<div class="review-grid">
+{% for block in section.blocks %}<article class="review-card reveal" {{ block.shopify_attributes }}><div aria-label="{{ block.settings.rating }} von 5 Sternen" class="review-stars">{% assign rating = block.settings.rating | default: 5 %}{% for i in (1..rating) %}★{% endfor %}</div><blockquote>„{{ block.settings.quote | escape }}“</blockquote><div class="review-author"><div><strong>{{ block.settings.author | escape }}</strong><span>{{ block.settings.product | escape }}</span></div><span aria-hidden="true" class="review-initial">{{ block.settings.initial | escape }}</span></div></article>{% endfor %}
+</div>
+</div>
+</section>
+</div>
+{% schema %}
+{
+  "name":"Zeha — Reviews",
+  "max_blocks":3,
+  "settings":[
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Ein kleiner Liebesgruß"},{"type":"text","id":"heading","label":"Heading","default":"Bedeutungsvolle Stücke, jeden Tag geliebt."},
+    {"type":"checkbox","id":"demo","label":"Show demo notice","default":true},{"type":"text","id":"demo_label","label":"Demo label","default":"Demo-Inhalte"},{"type":"textarea","id":"demo_text","label":"Demo text","default":"Diese Beispielstimmen zeigen das Layout. Vor dem Launch bitte durch verifizierte Kundenbewertungen ersetzen."}
+  ],
+  "blocks":[{"type":"review","name":"Review","settings":[{"type":"range","id":"rating","label":"Rating","min":1,"max":5,"step":1,"default":5},{"type":"textarea","id":"quote","label":"Quote","default":"Die Ayatul-Kursi-Kette fühlt sich sehr persönlich an und wirkt trotzdem zart zu meinen Alltagsoutfits."},{"type":"text","id":"author","label":"Author","default":"Amira K."},{"type":"text","id":"product","label":"Product","default":"Ayatul-Kursi-Kette"},{"type":"text","id":"initial","label":"Initial","default":"A"}]}],
+  "presets":[{"name":"Zeha — Reviews","blocks":[{"type":"review"},{"type":"review"},{"type":"review"}]}]
+}
+{% endschema %}

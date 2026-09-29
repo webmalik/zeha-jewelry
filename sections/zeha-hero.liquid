@@ -1,0 +1,45 @@
+{% render 'zeha-assets' %}
+{%- liquid
+  if section.settings.image != blank
+    assign hero_image_url = section.settings.image | image_url: width: 2400
+  else
+    assign hero_image_url = 'hero-zeha.png' | asset_url
+  endif
+-%}
+<div class="zeha-scope">
+<section aria-labelledby="hero-title-{{ section.id }}" class="hero">
+  <div aria-label="{{ section.settings.image_alt | escape }}" class="hero-media" role="img" style="background-image:url('{{ hero_image_url }}')"></div>
+  <div class="hero-inner container">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      <h1 id="hero-title-{{ section.id }}">{{ section.settings.heading | escape }}</h1>
+      <p>{{ section.settings.text | escape }}</p>
+      <div class="hero-ctas">
+        <a class="button button-primary" href="{{ section.settings.primary_link | default: '#bestsellers' }}">{{ section.settings.primary_label | escape }} <span aria-hidden="true">↗</span></a>
+        <a class="button button-secondary" href="{{ section.settings.secondary_link | default: '#collection' }}">{{ section.settings.secondary_label | escape }}</a>
+      </div>
+      <div class="hero-note">{{ section.settings.note | escape }}</div>
+    </div>
+  </div>
+  <div aria-hidden="true" class="scroll-cue">{{ section.settings.scroll_text | escape }}</div>
+</section>
+</div>
+{% schema %}
+{
+  "name": "Zeha — Hero",
+  "settings": [
+    {"type":"image_picker","id":"image","label":"Hero image"},
+    {"type":"text","id":"image_alt","label":"Image alt","default":"Frau mit einer filigranen, orientalisch inspirierten Halskette"},
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Moderne Eleganz, verwurzelt in Tradition"},
+    {"type":"text","id":"heading","label":"Heading","default":"Deine Identität, mühelos veredelt."},
+    {"type":"textarea","id":"text","label":"Text","default":"Zeha kreiert edlen Schmuck für Frauen, die ihre Identität ausdrücken, ihren Wurzeln verbunden bleiben und jeden Tag mit stiller Selbstsicherheit leben."},
+    {"type":"text","id":"primary_label","label":"Primary button","default":"Bestseller entdecken"},
+    {"type":"url","id":"primary_link","label":"Primary link"},
+    {"type":"text","id":"secondary_label","label":"Secondary button","default":"Kollektion entdecken"},
+    {"type":"url","id":"secondary_link","label":"Secondary link"},
+    {"type":"text","id":"note","label":"Note","default":"Ausstrahlung. Herkunft. Deine Identität."},
+    {"type":"text","id":"scroll_text","label":"Scroll cue","default":"entdecken"}
+  ],
+  "presets": [{"name":"Zeha — Hero"}]
+}
+{% endschema %}

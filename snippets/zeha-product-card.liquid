@@ -1,0 +1,89 @@
+{%- liquid
+  assign card_product = block.settings.product
+  assign card_title = block.settings.title
+  assign card_price = block.settings.price
+  assign card_url = block.settings.link
+  assign card_image = block.settings.image
+  assign card_alt = block.settings.alt
+  assign card_description = block.settings.description
+
+  if card_product != blank
+    if block.settings.use_product_title or card_title == blank
+      assign card_title = card_product.title
+    endif
+    if block.settings.use_product_price or card_price == blank
+      assign card_price = card_product.price | money
+    endif
+    if card_url == blank
+      assign card_url = card_product.url
+    endif
+    if block.settings.use_product_image and card_product.featured_image != blank
+      assign card_image = card_product.featured_image
+      if card_alt == blank
+        assign card_alt = card_product.featured_image.alt
+      endif
+    endif
+    if block.settings.use_product_description
+      assign product_description = card_product.description | strip_html | strip
+      if product_description != blank
+        assign card_description = product_description
+      endif
+    endif
+  endif
+
+  if card_title == blank
+    assign card_title = fallback_title
+  endif
+  if card_price == blank
+    assign card_price = fallback_price
+  endif
+  if card_url == blank
+    assign card_url = '#bestsellers'
+  endif
+  if card_alt == blank
+    assign card_alt = card_title
+  endif
+-%}
+<article class="product-card reveal" {{ block.shopify_attributes }}>
+  <div class="product-media">
+    {%- if block.settings.badge != blank -%}<span class="product-badge">{{ block.settings.badge | escape }}</span>{%- endif -%}
+    {%- if card_image != blank -%}
+      {{ card_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: card_alt, widths: '360,540,720,900', sizes: '(max-width: 700px) 50vw, (max-width: 960px) 50vw, 25vw' }}
+    {%- elsif fallback_asset != blank -%}
+      <img src="{{ fallback_asset | asset_url }}" alt="{{ card_alt | escape }}" loading="lazy" width="900" height="1023">
+    {%- endif -%}
+
+    {%- if card_product != blank and card_product.selected_or_first_available_variant != blank -%}
+      {%- assign variant = card_product.selected_or_first_available_variant -%}
+      {%- assign form_id = 'zehaQuickAdd-' | append: section.id | append: '-' | append: block.id -%}
+      <sht-prd-frm class="zeha-quick-form" data-section="zeha-{{ section.id }}-{{ block.id }}">
+        <div class="form--error js-product-form-error-wrapper" data-type="error-wrapper" role="alert" hidden>
+          <span class="js-product-form-error-message" data-type="error-message"></span>
+        </div>
+        {%- form 'product', card_product, id: form_id, class: 'zeha-product-form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+          <input type="hidden" name="id" value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}>
+          <button
+            aria-label="{{ card_title | escape }} in den Warenkorb legen"
+            class="quick-add js-product-form-submit-btn"
+            type="submit"
+            name="add"
+            {% unless variant.available %}disabled aria-disabled="true"{% endunless %}
+          >
+            <span class="js-product-form-submit-btn-text">+</span>
+            <span class="hidden js-product-form-spinner" aria-hidden="true"></span>
+          </button>
+        {%- endform -%}
+      </sht-prd-frm>
+    {%- else -%}
+      <button aria-label="{{ card_title | escape }}" class="quick-add" type="button" disabled aria-disabled="true">+</button>
+    {%- endif -%}
+  </div>
+  <div class="product-info">
+    <div class="product-meta">
+      <h3 class="product-name">{{ card_title | escape }}</h3>
+      <span class="product-price">{{ card_price }}</span>
+    </div>
+    {%- if card_description != blank -%}<p class="product-description">{{ card_description | escape }}</p>{%- endif -%}
+    <a class="product-link" href="{{ card_url }}">{{ block.settings.button_label | default: 'Jetzt entdecken' | escape }}</a>
+  </div>
+</article>

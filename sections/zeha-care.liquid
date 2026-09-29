@@ -1,0 +1,18 @@
+{% render 'zeha-assets' %}
+<div class="zeha-scope">
+<section aria-labelledby="care-title-{{ section.id }}" class="care-band" id="care">
+<div class="container care-inner">
+<div class="care-intro reveal"><span class="eyebrow">{{ section.settings.eyebrow | escape }}</span><h2 id="care-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2><p>{{ section.settings.text | escape }}</p><span class="care-footnote">{{ section.settings.footnote | escape }}</span></div>
+<div class="care-points">{% for block in section.blocks %}<article class="care-item reveal" {{ block.shopify_attributes }}><div class="care-number">{{ block.settings.number | escape }}</div><h3>{{ block.settings.heading | escape }}</h3><p>{{ block.settings.text | escape }}</p></article>{% endfor %}</div>
+</div>
+</section>
+</div>
+{% schema %}
+{
+  "name":"Zeha — Care",
+  "max_blocks":3,
+  "settings":[{"type":"text","id":"eyebrow","label":"Eyebrow","default":"Qualität & Pflege"},{"type":"text","id":"heading","label":"Heading","default":"Gemacht zum Tragen. Einfach zu pflegen."},{"type":"textarea","id":"text","label":"Text","default":"Unsere Schmuckstücke bestehen aus Edelstahl und sind für angenehmes Tragen im Alltag gemacht. Ein paar einfache Gewohnheiten helfen, den Glanz zu bewahren."},{"type":"textarea","id":"footnote","label":"Footnote","default":"Für länger anhaltenden Glanz nimm deinen Schmuck vor dem Duschen, Schwimmen oder Wassersport ab. Halte ihn trocken und fern von Parfum, Cremes und aggressiven Chemikalien."}],
+  "blocks":[{"type":"item","name":"Care item","settings":[{"type":"text","id":"number","label":"Label","default":"01 / MATERIAL"},{"type":"text","id":"heading","label":"Heading","default":"Edelstahl"},{"type":"textarea","id":"text","label":"Text","default":"Eine durchdachte Basis für Schmuckstücke, die du oft trägst."}]}],
+  "presets":[{"name":"Zeha — Care","blocks":[{"type":"item"},{"type":"item"},{"type":"item"}]}]
+}
+{% endschema %}
