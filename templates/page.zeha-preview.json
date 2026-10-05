@@ -1,1 +1,507 @@
-{"sections":{"zeha_hero":{"type":"zeha-hero","settings":{}},"zeha_values":{"type":"zeha-values","blocks":{"v1":{"type":"item","settings":{"icon":"✦","title":"Mit Bedeutung gestaltet","text":"Persönliche Symbole und durchdachte Details."}},"v2":{"type":"item","settings":{"icon":"◌","title":"In der Tradition verwurzelt","text":"Bedeutungsvolle, arabisch inspirierte Schmuckstücke mit moderner Handschrift."}},"v3":{"type":"item","settings":{"icon":"⌁","title":"Eleganz für jeden Tag","text":"Stilvolle Designs für Arbeit, Reisen und alles dazwischen."}},"v4":{"type":"item","settings":{"icon":"◇","title":"Leiser Luxus","text":"Minimalistische Statement-Pieces mit besonderer Ausstrahlung."}}},"block_order":["v1","v2","v3","v4"],"settings":{}},"zeha_best":{"type":"zeha-bestsellers","blocks":{"p1":{"type":"product","settings":{"product":"ayatul-kursi-kette","badge":"Signature-Piece","title":"Ayatul Kursi","price":"€59.90","description":"Eine stille Quelle des Trostes, gestaltet, um dich zu begleiten.","button_label":"Jetzt entdecken","use_product_image":false,"use_product_title":false,"use_product_price":false,"use_product_description":false}},"p2":{"type":"product","settings":{"product":"kleeblatt-perlen-ohrringe","badge":"Alltagsklassiker","title":"Perlen-Kleeblatt-Ohrringe","price":"€44.90","description":"Ein zartes, elegantes Detail für Alltagslooks und besondere Momente.","button_label":"Jetzt entdecken","use_product_image":false,"use_product_title":false,"use_product_price":false,"use_product_description":false}},"p3":{"type":"product","settings":{"product":"allah-kette","badge":"Mit Bedeutung","title":"Allah","price":"€49.90","description":"Eine feine Erinnerung an den Glauben – ideal zum täglichen Layering.","button_label":"Jetzt entdecken","use_product_image":false,"use_product_title":false,"use_product_price":false,"use_product_description":false}},"p4":{"type":"product","settings":{"product":"weisses-klee-armreif","badge":"Alltagsklassiker","title":"Vierblättriges Goldarmband","price":"€54.90","description":"Ein klares Glückssymbol, das schlichte Looks besonders macht.","button_label":"Jetzt entdecken","use_product_image":false,"use_product_title":false,"use_product_price":false,"use_product_description":false}}},"block_order":["p1","p2","p3","p4"],"settings":{}},"zeha_signature":{"type":"zeha-signature","blocks":{"s1":{"type":"item","settings":{"title":"Ayatul Kursi","subtitle":"Glaube & Trost"}},"s2":{"type":"item","settings":{"title":"Allah","subtitle":"Stille Erinnerung"}},"s3":{"type":"item","settings":{"title":"Alhamdulillah","subtitle":"Dankbarkeit im Alltag"}},"s4":{"type":"item","settings":{"title":"Baraka","subtitle":"Segen & Neubeginn"}}},"block_order":["s1","s2","s3","s4"],"settings":{}},"zeha_classics":{"type":"zeha-classics","blocks":{"c1":{"type":"product","settings":{"product":"kleeblatt-perlen-ohrringe","badge":"Klassiker","title":"Perlen-Kleeblatt-Ohrringe","price":"€44.90","description":"Zarte Perlendetails in einer eleganten Kleeblattform.","button_label":"Jetzt entdecken","use_product_image":false,"use_product_title":false,"use_product_price":false,"use_product_description":false}},"c2":{"type":"product","settings":{"product":"weisses-klee-armreif","badge":"Klassiker","title":"Vierblättriges Goldarmband","price":"€54.90","description":"Ein dezenter goldener Akzent mit einer unverwechselbaren Form.","button_label":"Jetzt entdecken","use_product_image":false,"use_product_title":false,"use_product_price":false,"use_product_description":false}},"c3":{"type":"product","settings":{"badge":"Neu","title":"Perlen-Tropfenohrringe","price":"€39.90","description":"Ein müheloser Akzent für Arbeitstage, Dinner und Reisen.","button_label":"Jetzt entdecken","use_product_image":false,"use_product_title":false,"use_product_price":false,"use_product_description":false}},"c4":{"type":"product","settings":{"badge":"Bestseller","title":"Minimalistische Goldkette","price":"€42.90","description":"Eine klare Basis, die deine persönlichen Schmuckstücke wirken lässt.","button_label":"Jetzt entdecken","use_product_image":false,"use_product_title":false,"use_product_price":false,"use_product_description":false}}},"block_order":["c1","c2","c3","c4"],"settings":{}},"zeha_story":{"type":"zeha-story","blocks":{"sp1":{"type":"point","settings":{"number":"01","text":"Ausstrahlung und Glanz, die mühelos wirken – nie laut."}},"sp2":{"type":"point","settings":{"number":"02","text":"Moderne, minimalistische Schmuckstücke mit persönlicher Handschrift."}}},"block_order":["sp1","sp2"],"settings":{}},"zeha_reviews":{"type":"zeha-reviews","blocks":{"r1":{"type":"review","settings":{"rating":5,"quote":"Die Ayatul-Kursi-Kette fühlt sich sehr persönlich an und wirkt trotzdem zart zu meinen Alltagsoutfits.","author":"Amira K.","product":"Ayatul-Kursi-Kette","initial":"A"}},"r2":{"type":"review","settings":{"rating":5,"quote":"Meine Allah-Kette trage ich von der Uni bis zum Abendessen. Sie ist dezent, elegant und mir sehr nah.","author":"Sarah M.","product":"Allah-Kette","initial":"S"}},"r3":{"type":"review","settings":{"rating":5,"quote":"Das perfekte Geschenk für meine Schwester – bedeutungsvoll, ohne zu formell zu wirken. Auch die Verpackung war wunderschön.","author":"Leila R.","product":"Alhamdulillah-Kette","initial":"L"}}},"block_order":["r1","r2","r3"],"settings":{"demo":true}},"zeha_packaging":{"type":"zeha-packaging","blocks":{"m1":{"type":"media","settings":{"alt":"Zeha-Verpackung und Schmuckdetail","aria_label":"Vorschau des Verpackungsvideos öffnen"}},"m2":{"type":"media","settings":{"alt":"Zeha-Geschenkverpackung und Schmuckdetail","aria_label":"Vorschau des Geschenkverpackungsvideos öffnen"}}},"block_order":["m1","m2"],"settings":{}},"zeha_care":{"type":"zeha-care","blocks":{"care1":{"type":"item","settings":{"number":"01 / MATERIAL","heading":"Edelstahl","text":"Eine durchdachte Basis für Schmuckstücke, die du oft trägst."}},"care2":{"type":"item","settings":{"number":"02 / WASSER","heading":"Eine Pause vom Wasser","text":"Vor dem Duschen, Schwimmen oder Wassersport abnehmen."}},"care3":{"type":"item","settings":{"number":"03 / TÄGLICHE PFLEGE","heading":"Trocken aufbewahren","text":"In der Schmucktasche aufbewahren und vorsichtig mit einem weichen Tuch polieren."}}},"block_order":["care1","care2","care3"],"settings":{}},"zeha_final":{"type":"zeha-final-cta","settings":{}}},"order":["zeha_hero","zeha_values","zeha_best","zeha_signature","zeha_classics","zeha_story","zeha_reviews","zeha_packaging","zeha_care","zeha_final"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+    "sections": {
+        "zeha_hero": {
+            "type": "zeha-hero",
+            "settings": {
+                "image_alt": "Frau mit einer filigranen, orientalisch inspirierten Halskette",
+                "eyebrow": "Moderne Eleganz, verwurzelt in Tradition",
+                "heading": "Deine Identität, mühelos veredelt.",
+                "text": "Zeha kreiert edlen Schmuck für Frauen, die ihre Identität ausdrücken, ihren Wurzeln verbunden bleiben und jeden Tag mit stiller Selbstsicherheit leben.",
+                "primary_label": "Bestseller entdecken",
+                "primary_link": "shopify://collections/best-selling-products",
+                "secondary_label": "Kollektion entdecken",
+                "secondary_link": "shopify://collections/all",
+                "note": "Ausstrahlung. Herkunft. Deine Identität.",
+                "scroll_text": "entdecken"
+            }
+        },
+        "zeha_best": {
+            "type": "zeha-bestsellers",
+            "blocks": {
+                "p1": {
+                    "type": "product",
+                    "settings": {
+                        "product": "ayatul-kursi-kette",
+                        "use_product_image": true,
+                        "use_product_title": true,
+                        "use_product_price": true,
+                        "use_product_description": true,
+                        "alt": "",
+                        "badge": "Signature-Piece",
+                        "title": "Ayatul Kursi",
+                        "price": "€59.90",
+                        "description": "Eine stille Quelle des Trostes, gestaltet, um dich zu begleiten.",
+                        "link": "",
+                        "button_label": "Jetzt entdecken"
+                    }
+                },
+                "p2": {
+                    "type": "product",
+                    "settings": {
+                        "product": "kleeblatt-perlen-ohrringe",
+                        "use_product_image": true,
+                        "use_product_title": true,
+                        "use_product_price": true,
+                        "use_product_description": true,
+                        "alt": "",
+                        "badge": "Alltagsklassiker",
+                        "title": "Perlen-Kleeblatt-Ohrringe",
+                        "price": "€44.90",
+                        "description": "Ein zartes, elegantes Detail für Alltagslooks und besondere Momente.",
+                        "link": "",
+                        "button_label": "Jetzt entdecken"
+                    }
+                },
+                "p3": {
+                    "type": "product",
+                    "settings": {
+                        "product": "allah-kette",
+                        "use_product_image": true,
+                        "use_product_title": true,
+                        "use_product_price": true,
+                        "use_product_description": true,
+                        "alt": "",
+                        "badge": "Mit Bedeutung",
+                        "title": "Allah",
+                        "price": "€49.90",
+                        "description": "Eine feine Erinnerung an den Glauben – ideal zum täglichen Layering.",
+                        "link": "",
+                        "button_label": "Jetzt entdecken"
+                    }
+                },
+                "p4": {
+                    "type": "product",
+                    "settings": {
+                        "product": "weisses-klee-armreif",
+                        "use_product_image": true,
+                        "use_product_title": true,
+                        "use_product_price": true,
+                        "use_product_description": true,
+                        "alt": "",
+                        "badge": "Alltagsklassiker",
+                        "title": "Vierblättriges Goldarmband",
+                        "price": "€54.90",
+                        "description": "Ein klares Glückssymbol, das schlichte Looks besonders macht.",
+                        "link": "",
+                        "button_label": "Jetzt entdecken"
+                    }
+                }
+            },
+            "block_order": ["p1", "p2", "p3", "p4"],
+            "settings": {
+                "eyebrow": "Bestseller",
+                "heading": "Schmuck, der deinen Stil persönlich macht.",
+                "text": "Eine ausgewählte Mischung aus bedeutungsvollen Signaturstücken und minimalistischen Favoriten für jeden Tag.",
+                "link_label": "Signaturkollektion entdecken",
+                "link": "shopify://collections/best-selling-products",
+                "fallback_1": "product-ayatul.png",
+                "fallback_title_1": "Ayatul Kursi",
+                "fallback_price_1": "€59.90",
+                "fallback_2": "product-clover-earrings.jpg",
+                "fallback_title_2": "Perlen-Kleeblatt-Ohrringe",
+                "fallback_price_2": "€44.90",
+                "fallback_3": "product-alhamdulillah.png",
+                "fallback_title_3": "Allah",
+                "fallback_price_3": "€49.90",
+                "fallback_4": "product-clover-bangle.jpg",
+                "fallback_title_4": "Vierblättriges Goldarmband",
+                "fallback_price_4": "€54.90"
+            }
+        },
+        "zeha_values": {
+            "type": "zeha-values",
+            "blocks": {
+                "v1": {
+                    "type": "item",
+                    "settings": {
+                        "icon": "✦",
+                        "title": "Mit Bedeutung gestaltet",
+                        "text": "Persönliche Symbole und durchdachte Details."
+                    }
+                },
+                "v2": {
+                    "type": "item",
+                    "settings": {
+                        "icon": "◌",
+                        "title": "In der Tradition verwurzelt",
+                        "text": "Bedeutungsvolle, arabisch inspirierte Schmuckstücke mit moderner Handschrift."
+                    }
+                },
+                "v3": {
+                    "type": "item",
+                    "settings": {
+                        "icon": "⌁",
+                        "title": "Eleganz für jeden Tag",
+                        "text": "Stilvolle Designs für Arbeit, Reisen und alles dazwischen."
+                    }
+                },
+                "v4": {
+                    "type": "item",
+                    "settings": {
+                        "icon": "◇",
+                        "title": "Leiser Luxus",
+                        "text": "Minimalistische Statement-Pieces mit besonderer Ausstrahlung."
+                    }
+                }
+            },
+            "block_order": ["v1", "v2", "v3", "v4"],
+            "settings": {
+                "aria_label": "Warum Zeha"
+            }
+        },
+        "zeha_signature": {
+            "type": "zeha-signature",
+            "blocks": {
+                "s1": {
+                    "type": "item",
+                    "settings": {
+                        "title": "Ayatul Kursi",
+                        "subtitle": "Glaube & Trost",
+                        "link": "shopify://products/ayatul-kursi-kette"
+                    }
+                },
+                "s2": {
+                    "type": "item",
+                    "settings": {
+                        "title": "Allah",
+                        "subtitle": "Stille Erinnerung",
+                        "link": "shopify://products/allah-kette"
+                    }
+                },
+                "s3": {
+                    "type": "item",
+                    "settings": {
+                        "title": "Alhamdulillah",
+                        "subtitle": "Dankbarkeit im Alltag",
+                        "link": "shopify://products/alhamdulillah-kette"
+                    }
+                }
+            },
+            "block_order": ["s1", "s2", "s3"],
+            "settings": {
+                "eyebrow": "Die Zeha-Signatur",
+                "heading": "Bedeutungsvolle Symbole, persönlich gemacht.",
+                "text": "Unsere orientalisch inspirierte Kollektion bringt Zehas spirituelle und kulturelle Wurzeln in eine moderne, elegante Garderobe – persönliche Schmuckstücke, die dich jeden Tag begleiten.",
+                "button_label": "Orientalischen Schmuck entdecken",
+                "button_link": "shopify://collections/eid-2025-collection"
+            }
+        },
+        "zeha_classics": {
+            "type": "zeha-classics",
+            "blocks": {
+                "c1": {
+                    "type": "product",
+                    "settings": {
+                        "product": "emily-perlen-kette",
+                        "use_product_image": true,
+                        "use_product_title": true,
+                        "use_product_price": true,
+                        "use_product_description": true,
+                        "alt": "",
+                        "badge": "Klassiker",
+                        "title": "Perlen-Kleeblatt-Ohrringe",
+                        "price": "€44.90",
+                        "description": "Zarte Perlendetails in einer eleganten Kleeblattform.",
+                        "link": "",
+                        "button_label": "Jetzt entdecken"
+                    }
+                },
+                "c2": {
+                    "type": "product",
+                    "settings": {
+                        "product": "two-tone-wave-ohrringe",
+                        "use_product_image": true,
+                        "use_product_title": true,
+                        "use_product_price": true,
+                        "use_product_description": true,
+                        "alt": "",
+                        "badge": "Klassiker",
+                        "title": "Vierblättriges Goldarmband",
+                        "price": "€54.90",
+                        "description": "Ein dezenter goldener Akzent mit einer unverwechselbaren Form.",
+                        "link": "",
+                        "button_label": "Jetzt entdecken"
+                    }
+                },
+                "c3": {
+                    "type": "product",
+                    "settings": {
+                        "product": "blauer-zirkonia-ring",
+                        "use_product_image": true,
+                        "use_product_title": true,
+                        "use_product_price": true,
+                        "use_product_description": true,
+                        "alt": "",
+                        "badge": "Neu",
+                        "title": "Perlen-Tropfenohrringe",
+                        "price": "€39.90",
+                        "description": "Ein müheloser Akzent für Arbeitstage, Dinner und Reisen.",
+                        "link": "",
+                        "button_label": "Jetzt entdecken"
+                    }
+                },
+                "c4": {
+                    "type": "product",
+                    "settings": {
+                        "product": "3-diamant-beweglicher-armbander",
+                        "use_product_image": true,
+                        "use_product_title": true,
+                        "use_product_price": true,
+                        "use_product_description": true,
+                        "alt": "",
+                        "badge": "Bestseller",
+                        "title": "Minimalistische Goldkette",
+                        "price": "€42.90",
+                        "description": "Eine klare Basis, die deine persönlichen Schmuckstücke wirken lässt.",
+                        "link": "",
+                        "button_label": "Jetzt entdecken"
+                    }
+                }
+            },
+            "block_order": ["c1", "c2", "c3", "c4"],
+            "settings": {
+                "eyebrow": "Alltagsklassiker",
+                "heading": "Die kleinen Details, die deinen Look vollenden.",
+                "text": "Stilvolle, vielseitige Schmuckstücke für Frauen, die etwas Besonderes suchen.",
+                "link_label": "Alle Klassiker entdecken",
+                "link": "shopify://collections/all",
+                "fallback_1": "product-clover-earrings.jpg",
+                "fallback_title_1": "Perlen-Kleeblatt-Ohrringe",
+                "fallback_price_1": "€44.90",
+                "fallback_2": "product-clover-bangle.jpg",
+                "fallback_title_2": "Vierblättriges Goldarmband",
+                "fallback_price_2": "€54.90",
+                "fallback_3": "product-alhamdulillah.png",
+                "fallback_title_3": "Perlen-Tropfenohrringe",
+                "fallback_price_3": "€39.90",
+                "fallback_4": "product-ayatul.png",
+                "fallback_title_4": "Minimalistische Goldkette",
+                "fallback_price_4": "€42.90"
+            }
+        },
+        "zeha_story": {
+            "type": "zeha-story",
+            "blocks": {
+                "sp1": {
+                    "type": "point",
+                    "settings": {
+                        "number": "01",
+                        "text": "Ausstrahlung und Glanz, die mühelos wirken – nie laut."
+                    }
+                },
+                "sp2": {
+                    "type": "point",
+                    "settings": {
+                        "number": "02",
+                        "text": "Moderne, minimalistische Schmuckstücke mit persönlicher Handschrift."
+                    }
+                }
+            },
+            "block_order": ["sp1", "sp2"],
+            "settings": {
+                "image_alt": "Nahaufnahme einer goldenen, orientalisch inspirierten Halskette auf Seide und Stein",
+                "arabic": "زہا",
+                "stamp_text": "Ausstrahlung",
+                "eyebrow": "Die Bedeutung von Zeha",
+                "heading": "Ausstrahlung, verwurzelt in dir.",
+                "text": "Zeha hat seine Wurzeln im Arabischen und steht für Ausstrahlung, Aufblühen und Eleganz. Wir kreieren Schmuck für Frauen, die bewusst auffallen möchten – ihren Wurzeln nah, aber nie auf einen Stil beschränkt.",
+                "button_label": "Mehr über Zeha erfahren",
+                "button_link": "shopify://pages/about-us"
+            }
+        },
+        "zeha_reviews": {
+            "type": "zeha-reviews",
+            "blocks": {
+                "r1": {
+                    "type": "review",
+                    "settings": {
+                        "rating": 5,
+                        "quote": "Absolutely loved the jewelry I bought from Zeha! ✨ The quality of the earrings and bracelet is so beautiful and elegant. They instantly make any outfit look more classy and wow 💜 Honestly, just wear them and you’ll feel extra pretty. Highly recommended! 💎",
+                        "author": "Hina Khan",
+                        "meta": "vor 4 Monaten · Google Rezension",
+                        "avatar_url": "https://lh3.googleusercontent.com/a-/ALV-UjUq3Pxjk3hFuz_DsN__1M0llLvMaJq5eMHVtweevD2CSsqD0reNNQ=w72-h72-p-rp-mo-br100",
+                        "avatar_alt": "Hina Khan",
+                        "review_url": "https://maps.app.goo.gl/7QQ4w7Q1WuxRBLco9"
+                    }
+                },
+                "r2": {
+                    "type": "review",
+                    "settings": {
+                        "rating": 5,
+                        "quote": "**Absolutely Stunning – A Must-Have Accessory!** I couldn’t be more thrilled with this gold-plated bracelet! From the moment I opened the box, I was blown away by its elegant design and high-quality finish. It has the perfect amount of shine without being over-the-top, making it a versatile piece I can wear both casually and for special occasions. The craftsmanship is outstanding — it looks and feels far more expensive than it actually is. I’ve received countless compliments every time I wear it. It’s also lightweight and very comfortable, which is a huge plus for everyday wear. If you’re on the fence, don’t hesitate! This bracelet is timeless, classy, and adds a touch of luxury to any outfit. I’m genuinely impressed and will definitely be buying more from this brand. Highly recommended!",
+                        "author": "Saba Ferdous",
+                        "meta": "vor 1 Jahr · Google Rezension",
+                        "avatar_url": "",
+                        "avatar_alt": "Saba Ferdous",
+                        "review_url": "https://maps.app.goo.gl/D4uPTfFP84p7yVGdA"
+                    }
+                },
+                "r3": {
+                    "type": "review",
+                    "settings": {
+                        "rating": 5,
+                        "quote": "Simple, classy, elegant jewellery that is easy to maintain and goes with everything! I’ve been wearing mine very frequently for the last 5 months (even sleeping without taking it off) and there’s no colour change or wear out. Certainly recommend as a go to accessory and to give as a present as well. Thank you Zeha jewellery 💗",
+                        "author": "Palwasha Rehman",
+                        "meta": "vor 10 Monaten · Google Rezension",
+                        "avatar_url": "",
+                        "avatar_alt": "Palwasha Rehman",
+                        "review_url": "https://maps.app.goo.gl/UqwfwJ4187ZtuMJb7"
+                    }
+                },
+                "r4": {
+                    "type": "review",
+                    "settings": {
+                        "rating": 5,
+                        "quote": "I recently bought a few pieces from Zeha Jewelry and I am really happy with my experience of shopping with them. The look and feel of the jewelry is quite excellent to be honest. The gold plating on the jewelry gives each piece a beautiful shine and looks very elegant. I’ve worn the jewelry multiple times and it still looks as good as it did on day 1. To top it all off the packaging is so thoughtful! Makes for really cute gifts as well. I would definitely recommend Zeha Jewelry for your next jewelry purchase!",
+                        "author": "Saima Mahmood",
+                        "meta": "vor 1 Jahr · Google Rezension",
+                        "avatar_url": "",
+                        "avatar_alt": "Saima Mahmood",
+                        "review_url": "https://maps.app.goo.gl/8pi5u2jnrcq5N95c9"
+                    }
+                },
+                "r5": {
+                    "type": "review",
+                    "settings": {
+                        "rating": 5,
+                        "quote": "Richtig schön und schön kombinierbar 🥺 💗 Verfärbt nicht und ist super angenehm zum tragen. Alles wird mit viel Liebe und Qualität verpackt. Werde ich auch an meine Freunde verschenken",
+                        "author": "Selena Paiz",
+                        "meta": "vor 1 Jahr · Google Rezension",
+                        "avatar_url": "",
+                        "avatar_alt": "Selena Paiz",
+                        "review_url": "https://maps.app.goo.gl/w5bwbSvLAMKAS8sc6"
+                    }
+                },
+                "r6": {
+                    "type": "review",
+                    "settings": {
+                        "rating": 5,
+                        "quote": "I got my earring from here and am in love with them. The quality is great and the customer service is really next level :) i am super excited to wear them!",
+                        "author": "Fatima Akram",
+                        "meta": "vor 9 Monaten · Google Rezension",
+                        "avatar_url": "https://lh3.googleusercontent.com/a-/ALV-UjVM5GzoZI1tmr0cyllmItq69ukifywNWyPwma9ySivU1936yFd3=w72-h72-p-rp-mo-ba12-br100",
+                        "avatar_alt": "Fatima Akram",
+                        "review_url": "https://maps.app.goo.gl/pbYWukxGHskPVVL39"
+                    }
+                },
+                "r7": {
+                    "type": "review",
+                    "settings": {
+                        "rating": 5,
+                        "quote": "Such a versatile and beautiful necklace. I bought this necklace as a gift for my auntie and she absolutely loved it. The pendant is beautifully detailed and looks very elegant when worn. The gold colour gives it a lovely finish, and the delicate chain complements the pendant really well without taking attention away from the design. It feels special and meaningful, making it a lovely gift for someone you care about. Very pleased with my purchase and would happily recommend it.",
+                        "author": "Haseeb",
+                        "meta": "vor 1 Woche · Google Rezension",
+                        "avatar_url": "",
+                        "avatar_alt": "Haseeb",
+                        "review_url": "https://maps.app.goo.gl/K74AEDVrGUtuezu97"
+                    }
+                }
+            },
+            "block_order": ["r1", "r2", "r3", "r4", "r5", "r6", "r7"],
+            "settings": {
+                "eyebrow": "Ein kleiner Liebesgruß",
+                "heading": "Bedeutungsvolle Stücke, jeden Tag geliebt.",
+                "google_rating": "5.0",
+                "google_count": "7 Google Bewertungen",
+                "google_url": "",
+                "google_aria_label": "Alle Google Bewertungen von Zeha Jewelry öffnen"
+            }
+        },
+        "zeha_packaging": {
+            "type": "zeha-packaging",
+            "blocks": {
+                "m1": {
+                    "type": "media",
+                    "settings": {
+                        "video": "shopify://files/videos/lv_0_20260930160728.mp4",
+                        "alt": "Zeha-Verpackung und Schmuckdetail",
+                        "aria_label": "Vorschau des Verpackungsvideos öffnen"
+                    }
+                },
+                "m2": {
+                    "type": "media",
+                    "settings": {
+                        "video": "shopify://files/videos/lv_0_20251202170022.mp4",
+                        "alt": "Zeha-Geschenkverpackung und Schmuckdetail",
+                        "aria_label": "Vorschau des Geschenkverpackungsvideos öffnen"
+                    }
+                }
+            },
+            "block_order": ["m1", "m2"],
+            "settings": {
+                "eyebrow": "Das Zeha-Erlebnis",
+                "heading": "Ein besonderer Moment, bevor du die Schachtel öffnest.",
+                "text": "Durchdachte Verpackung macht jede Bestellung zu einem persönlichen Ritual – vom ersten Öffnen bis zu dem Schmuckstück, das dich täglich begleitet.",
+                "autoplay_mode": "viewport",
+                "loop_video": true
+            }
+        },
+        "zeha_care": {
+            "type": "zeha-care",
+            "blocks": {
+                "care1": {
+                    "type": "item",
+                    "settings": {
+                        "number": "01 / MATERIAL",
+                        "heading": "Materialien",
+                        "text": "Je nach Design aus Edelstahl oder anderen ausgewählten Materialien gefertigt. Die genauen Angaben findest du auf der jeweiligen Produktseite."
+                    }
+                },
+                "care2": {
+                    "type": "item",
+                    "settings": {
+                        "number": "02 / WASSER",
+                        "heading": "Eine Pause vom Wasser",
+                        "text": "Vor dem Duschen, Schwimmen oder Wassersport abnehmen."
+                    }
+                },
+                "care3": {
+                    "type": "item",
+                    "settings": {
+                        "number": "03 / TÄGLICHE PFLEGE",
+                        "heading": "Trocken aufbewahren",
+                        "text": "In der Schmucktasche aufbewahren und vorsichtig mit einem weichen Tuch polieren."
+                    }
+                }
+            },
+            "block_order": ["care1", "care2", "care3"],
+            "settings": {
+                "eyebrow": "Qualität & Pflege",
+                "heading": "Gemacht zum Tragen. Einfach zu pflegen.",
+                "text": "Unsere Schmuckstücke bestehen aus Edelstahl und sind für angenehmes Tragen im Alltag gemacht. Ein paar einfache Gewohnheiten helfen, den Glanz zu bewahren.",
+                "footnote": "Für länger anhaltenden Glanz nimm deinen Schmuck vor dem Duschen, Schwimmen oder Wassersport ab. Halte ihn trocken und fern von Parfum, Cremes und aggressiven Chemikalien."
+            }
+        },
+        "zeha_final": {
+            "type": "zeha-final-cta",
+            "settings": {
+                "eyebrow": "Finde das Schmuckstück, das zu dir passt",
+                "heading": "Trage, was dir wichtig ist.",
+                "text": "Entdecke bedeutungsvolle orientalische Signaturstücke und elegante Alltagsklassiker für deinen Lebensstil.",
+                "button_label": "Bedeutungsvollen Schmuck entdecken",
+                "button_link": "shopify://collections/best-selling-products"
+            }
+        }
+    },
+    "order": [
+        "zeha_hero",
+        "zeha_best",
+        "zeha_values",
+        "zeha_signature",
+        "zeha_classics",
+        "zeha_story",
+        "zeha_reviews",
+        "zeha_packaging",
+        "zeha_care",
+        "zeha_final"
+    ]
+}

@@ -308,7 +308,7 @@
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    color: var(--gold);
+    color: var(--ink);
     font-size: 12px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -431,8 +431,20 @@
     padding-right: 0;
 }
 .zeha-scope .value-icon {
+    display: flex;
+    align-items: center;
+    height: 26px;
     color: var(--gold);
-    font: 24px/1 var(--serif);
+}
+.zeha-scope .value-icon svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.35;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 .zeha-scope .value-title {
     font-size: 14px;
@@ -443,7 +455,6 @@
     font-size: 13px;
     line-height: 1.45;
 }
-
 .zeha-scope .section {
     padding: 112px 0;
 }
@@ -524,45 +535,58 @@
 }
 .zeha-scope .signature-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
 }
-.zeha-scope .signature-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    min-height: 96px;
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+.zeha-scope .signature-card {
+    min-width: 0;
     color: #fff;
 }
-.zeha-scope .signature-item:nth-child(odd) {
-    padding-right: 26px;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+.zeha-scope .signature-card-media {
+    display: block;
+    aspect-ratio: 0.78;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    background: #e8ded1;
 }
-.zeha-scope .signature-item:nth-child(even) {
-    padding-left: 26px;
+
+.zeha-scope .signature-card-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
 }
-.zeha-scope .signature-item span {
-    font: 500 22px/1.1 var(--serif);
+
+.zeha-scope .signature-card:hover .signature-card-media img {
+    transform: scale(1.045);
 }
-.zeha-scope .signature-item small {
+
+.zeha-scope .signature-card:focus-visible {
+    outline: 2px solid var(--gold-soft);
+    outline-offset: 5px;
+}
+
+.zeha-scope .signature-card-copy {
+    display: block;
+    padding-top: 13px;
+}
+
+.zeha-scope .signature-card-copy strong {
+    display: block;
+    font: 500 19px/1.15 var(--serif);
+}
+
+.zeha-scope .signature-card-copy small {
     display: block;
     margin-top: 6px;
     color: var(--gold-soft);
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-}
-.zeha-scope .signature-item::after {
-    content: '↗';
-    color: var(--gold-soft);
-    font-size: 20px;
-    transition: transform 0.2s ease;
-}
-.zeha-scope .signature-item:hover::after {
-    transform: translate(3px, -3px);
 }
 .zeha-scope .product-grid {
     display: grid;
@@ -804,6 +828,10 @@
     margin: 18px 0 24px;
     font: 500 20px/1.35 var(--serif);
     letter-spacing: -0.015em;
+
+    padding: 0;
+    background: none;
+    border-left: none;
 }
 .zeha-scope .review-author {
     display: flex;
@@ -847,7 +875,7 @@
 }
 .zeha-scope .packaging-card {
     position: relative;
-    min-height: 300px;
+    min-height: 836px;
     overflow: hidden;
     padding: 0;
     border-radius: var(--radius-md);
@@ -855,7 +883,7 @@
     text-align: left;
 }
 .zeha-scope .packaging-card:first-child {
-    min-height: 390px;
+    min-height: 836px;
 }
 .zeha-scope .packaging-card img,
 .zeha-scope .packaging-card .packaging-video {
@@ -1525,17 +1553,31 @@
         font-size: 15px;
     }
     .zeha-scope .signature-list {
-        grid-template-columns: 1fr;
+        grid-auto-columns: minmax(0, 76%);
+        grid-auto-flow: column;
+        grid-template-columns: none;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 0 4px 12px 0;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
     }
-    .zeha-scope .signature-item,
-    .zeha-scope .signature-item:nth-child(odd),
-    .zeha-scope .signature-item:nth-child(even) {
-        min-height: 82px;
-        padding: 16px 0;
-        border-right: 0;
+
+    .zeha-scope .signature-card {
+        scroll-snap-align: start;
     }
-    .zeha-scope .signature-item span {
+
+    .zeha-scope .signature-card-media {
+        aspect-ratio: 0.88;
+    }
+
+    .zeha-scope .signature-card-copy strong {
         font-size: 20px;
+    }
+
+    .zeha-scope .signature-card-copy small {
+        font-size: 10px;
     }
     .zeha-scope .packaging {
         padding-bottom: 76px;
@@ -1546,7 +1588,7 @@
     }
     .zeha-scope .packaging-card,
     .zeha-scope .packaging-card:first-child {
-        min-height: 285px;
+        min-height: 600px;
     }
     .zeha-scope .care-band {
         padding: 64px 0 72px;
@@ -1627,6 +1669,18 @@
         padding: 0 8px;
     }
 }
+@media (max-width: 550px) {
+    .zeha-scope .packaging-card,
+    .zeha-scope .packaging-card:first-child {
+        min-height: 400px;
+    }
+}
+@media (max-width: 450px) {
+    .zeha-scope .packaging-card,
+    .zeha-scope .packaging-card:first-child {
+        min-height: 350px;
+    }
+}
 @media (prefers-reduced-motion: reduce) {
     .zeha-scope {
         scroll-behavior: auto;
@@ -1661,4 +1715,313 @@
 
 .zeha-scope .js-product-form-spinner {
     display: none !important;
+}
+
+/* ========================================
+   ZEHA — GOOGLE REVIEWS / SWIPER
+======================================== */
+
+.zeha-scope .zeha-google-reviews {
+    overflow: hidden;
+}
+
+.zeha-scope .zeha-google-reviews .section-heading {
+    align-items: flex-end;
+}
+
+.zeha-scope .review-google-summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 190px;
+    padding: 11px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    text-decoration: none;
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.zeha-scope .review-google-summary:hover {
+    transform: translateY(-2px);
+    border-color: rgba(168, 132, 72, 0.48);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.zeha-scope .review-google-mark {
+    display: grid;
+    place-items: center;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(29, 28, 26, 0.08);
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.zeha-scope .review-google-summary__content {
+    display: block;
+}
+
+.zeha-scope .review-google-summary strong,
+.zeha-scope .review-google-summary small {
+    display: block;
+}
+
+.zeha-scope .review-google-summary strong {
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.zeha-scope .review-google-summary small {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.zeha-scope .review-google-arrow {
+    margin-left: auto;
+    color: var(--gold);
+    font-size: 13px;
+}
+
+/* Slider */
+
+.zeha-scope .review-slider {
+    position: relative;
+    width: 100%;
+}
+
+.zeha-scope .zeha-reviews-swiper {
+    width: 100%;
+    overflow: visible;
+    cursor: grab;
+}
+
+.zeha-scope .zeha-reviews-swiper:active {
+    cursor: grabbing;
+}
+
+.zeha-scope .zeha-reviews-swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.zeha-scope .zeha-reviews-swiper .swiper-slide {
+    display: flex;
+    height: auto;
+}
+
+/* Review card */
+
+.zeha-scope .review-card {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.zeha-scope .review-card__link {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 260px;
+    padding: 25px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.zeha-scope .review-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.zeha-scope .review-stars {
+    display: flex;
+    gap: 2px;
+    color: var(--gold);
+    font-size: 13px;
+    line-height: 1;
+}
+
+.zeha-scope .review-source {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.zeha-scope .review-card__quote {
+    flex: 1;
+    margin: 20px 0 28px;
+    padding: 0;
+    border: 0;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.65;
+
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+}
+
+.zeha-scope .review-author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.zeha-scope .review-author__profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.zeha-scope .review-avatar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--sand);
+}
+
+.zeha-scope .review-avatar__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.zeha-scope .review-initial {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: #554735;
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.zeha-scope .review-author__copy {
+    min-width: 0;
+}
+
+.zeha-scope .review-author__copy strong {
+    display: block;
+    overflow: hidden;
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.zeha-scope .review-author__copy > span {
+    display: block;
+    overflow: hidden;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.zeha-scope .review-card__external {
+    flex: 0 0 auto;
+    color: var(--gold);
+    font-size: 13px;
+}
+
+/* Navigation */
+
+.zeha-scope .review-slider__controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.zeha-scope .review-slider__button {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    transition:
+        opacity 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.zeha-scope .review-slider__button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(168, 132, 72, 0.42);
+}
+
+.zeha-scope .review-slider__button:disabled,
+.zeha-scope .review-slider__button.swiper-button-disabled {
+    opacity: 0.28;
+    cursor: default;
+}
+
+/* Tablet */
+
+@media (max-width: 1023px) {
+    .zeha-scope .review-card__link {
+        min-height: 250px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+    .zeha-scope .zeha-google-reviews .section-heading {
+        align-items: flex-start;
+    }
+
+    .zeha-scope .review-google-summary {
+        margin-top: 14px;
+    }
+
+    .zeha-scope .review-card__link {
+        min-height: 0;
+        padding: 21px;
+    }
+
+    .zeha-scope .review-card__quote {
+        margin-top: 18px;
+        margin-bottom: 24px;
+        -webkit-line-clamp: 9;
+    }
+
+    .zeha-scope .review-slider__controls {
+        justify-content: flex-start;
+        margin-top: 14px;
+    }
 }

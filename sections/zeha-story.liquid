@@ -1,26 +1,181 @@
 {% render 'zeha-assets' %}
+
 <div class="zeha-scope">
-<section aria-labelledby="story-title-{{ section.id }}" class="section story" id="story">
-<div class="container story-layout">
-<div class="story-image reveal">
-{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: section.settings.image_alt, widths: '480,720,960,1200', sizes: '(max-width: 700px) 100vw, 46vw' }}{% else %}<img alt="{{ section.settings.image_alt | escape }}" loading="lazy" src="{{ 'story-zeha.png' | asset_url }}" width="1200" height="1500">{% endif %}
-<span class="story-stamp">{{ section.settings.arabic }}<br><small>{{ section.settings.stamp_text | escape }}</small></span></div>
-<div class="story-copy reveal"><span class="eyebrow">{{ section.settings.eyebrow | escape }}</span><h2 id="story-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2><p>{{ section.settings.text | escape }}</p><a class="button button-primary" href="{{ section.settings.button_link | default: '#bestsellers' }}">{{ section.settings.button_label | escape }} <span aria-hidden="true">↗</span></a><div class="story-points">{% for block in section.blocks %}<div class="story-point" {{ block.shopify_attributes }}><strong>{{ block.settings.number | escape }}</strong><span>{{ block.settings.text | escape }}</span></div>{% endfor %}</div></div>
+  <section
+    aria-labelledby="story-title-{{ section.id }}"
+    class="section story"
+    id="story"
+  >
+    <div class="container story-layout">
+
+      <div class="story-image reveal">
+        {% if section.settings.image != blank %}
+          {{
+            section.settings.image
+            | image_url: width: 1200
+            | image_tag:
+              loading: 'lazy',
+              alt: section.settings.image_alt,
+              widths: '480,720,960,1200',
+              sizes: '(max-width: 700px) 100vw, 46vw'
+          }}
+        {% else %}
+          <img
+            alt="{{ section.settings.image_alt | escape }}"
+            loading="lazy"
+            src="{{ 'story-zeha.png' | asset_url }}"
+            width="1200"
+            height="1500"
+          >
+        {% endif %}
+
+        <span class="story-stamp">
+          {{ section.settings.arabic }}
+          <br>
+          <small>
+            {{ section.settings.stamp_text | escape }}
+          </small>
+        </span>
+      </div>
+
+      <div class="story-copy reveal">
+        <span class="eyebrow">
+          {{ section.settings.eyebrow | escape }}
+        </span>
+
+        <h2 id="story-title-{{ section.id }}">
+          {{ section.settings.heading | escape }}
+        </h2>
+
+        <p>
+          {{ section.settings.text | escape }}
+        </p>
+
+        <a
+          class="button button-primary"
+          href="{{ section.settings.button_link | default: '#bestsellers' }}"
+        >
+          {{ section.settings.button_label | escape }}
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        {% comment %}
+          STORY POINTS — TEMPORARILY HIDDEN
+
+          <div class="story-points">
+            {% for block in section.blocks %}
+              <div
+                class="story-point"
+                {{ block.shopify_attributes }}
+              >
+                <strong>
+                  {{ block.settings.number | escape }}
+                </strong>
+
+                <span>
+                  {{ block.settings.text | escape }}
+                </span>
+              </div>
+            {% endfor %}
+          </div>
+        {% endcomment %}
+
+      </div>
+
+    </div>
+  </section>
 </div>
-</section>
-</div>
+
 {% schema %}
 {
-  "name":"Zeha — Story",
-  "max_blocks":2,
-  "settings":[
-    {"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"image_alt","label":"Image alt","default":"Nahaufnahme einer goldenen, orientalisch inspirierten Halskette auf Seide und Stein"},
-    {"type":"text","id":"arabic","label":"Arabic mark","default":"زَهَا"},{"type":"text","id":"stamp_text","label":"Stamp text","default":"Ausstrahlung"},
-    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Die Bedeutung von Zeha"},{"type":"text","id":"heading","label":"Heading","default":"Ausstrahlung, verwurzelt in dir."},
-    {"type":"textarea","id":"text","label":"Text","default":"Zeha hat seine Wurzeln im Arabischen und steht für Ausstrahlung, Aufblühen und Eleganz. Wir kreieren Schmuck für Frauen, die bewusst auffallen möchten – ihren Wurzeln nah, aber nie auf einen Stil beschränkt."},
-    {"type":"text","id":"button_label","label":"Button","default":"Dein Schmuckstück finden"},{"type":"url","id":"button_link","label":"Button link"}
+  "name": "Zeha — Story",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt",
+      "default": "Nahaufnahme einer goldenen, orientalisch inspirierten Halskette auf Seide und Stein"
+    },
+    {
+      "type": "text",
+      "id": "arabic",
+      "label": "Arabic mark",
+      "default": "زَهَا"
+    },
+    {
+      "type": "text",
+      "id": "stamp_text",
+      "label": "Stamp text",
+      "default": "Ausstrahlung"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Die Bedeutung von Zeha"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Ausstrahlung, verwurzelt in dir."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Zeha hat seine Wurzeln im Arabischen und steht für Ausstrahlung, Aufblühen und Eleganz. Wir kreieren Schmuck für Frauen, die bewusst auffallen möchten – ihren Wurzeln nah, aber nie auf einen Stil beschränkt."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button",
+      "default": "Dein Schmuckstück finden"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
   ],
-  "blocks":[{"type":"point","name":"Story point","settings":[{"type":"text","id":"number","label":"Number","default":"01"},{"type":"textarea","id":"text","label":"Text","default":"Ausstrahlung und Glanz, die mühelos wirken – nie laut."}]}],
-  "presets":[{"name":"Zeha — Story","blocks":[{"type":"point"},{"type":"point"}]}]
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Story point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "01"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Ausstrahlung und Glanz, die mühelos wirken – nie laut."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeha — Story",
+      "blocks": [
+        {
+          "type": "point"
+        },
+        {
+          "type": "point"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

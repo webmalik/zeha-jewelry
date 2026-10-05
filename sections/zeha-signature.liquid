@@ -1,26 +1,201 @@
 {% render 'zeha-assets' %}
+
 <div class="zeha-scope">
-<section aria-labelledby="collection-title-{{ section.id }}" class="signature-collection" id="collection">
-<div class="container signature-layout">
-<div class="signature-copy reveal"><span class="eyebrow">{{ section.settings.eyebrow | escape }}</span><h2 id="collection-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2><p>{{ section.settings.text | escape }}</p><a class="button button-primary" href="{{ section.settings.button_link | default: '#bestsellers' }}">{{ section.settings.button_label | escape }} <span aria-hidden="true">↗</span></a></div>
-<div class="signature-list reveal">
-{% for block in section.blocks %}<a class="signature-item" href="{{ block.settings.link | default: '#bestsellers' }}" {{ block.shopify_attributes }}><span>{{ block.settings.title | escape }}<small>{{ block.settings.subtitle | escape }}</small></span></a>{% endfor %}
+  <section
+    class="signature-collection"
+    id="collection"
+    aria-labelledby="collection-title-{{ section.id }}"
+  >
+    <div class="container signature-layout">
+
+      <div class="signature-copy reveal">
+        <span class="eyebrow">
+          {{ section.settings.eyebrow | escape }}
+        </span>
+
+        <h2 id="collection-title-{{ section.id }}">
+          {{ section.settings.heading | escape }}
+        </h2>
+
+        <p>
+          {{ section.settings.text | escape }}
+        </p>
+
+        <a
+          class="button button-primary"
+          href="{{ section.settings.button_link | default: '#bestsellers' }}"
+        >
+          {{ section.settings.button_label | escape }}
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div
+        class="signature-list reveal"
+        aria-label="Schmuckstücke der Zeha-Signatur"
+      >
+
+        {% for block in section.blocks %}
+
+          {%- liquid
+            assign fallback_image = blank
+            assign fallback_alt = block.settings.title
+
+            case forloop.index
+              when 1
+                assign fallback_image = 'product-ayatul.png'
+                assign fallback_alt = 'Goldene Ayatul-Kursi-Halskette auf hellem Naturstein'
+              when 2
+                assign fallback_image = 'product-allah.png'
+                assign fallback_alt = 'Goldene Allah-Halskette auf hellem Naturstein'
+              when 3
+                assign fallback_image = 'product-alhamdulillah.png'
+                assign fallback_alt = 'Goldene Alhamdulillah-Halskette auf hellem Naturstein'
+            endcase
+
+            assign image_alt = block.settings.image_alt | default: fallback_alt
+          -%}
+
+          <a
+            class="signature-card"
+            href="{{ block.settings.link | default: '#bestsellers' }}"
+            aria-label="{{ block.settings.title | escape }} entdecken"
+            {{ block.shopify_attributes }}
+          >
+
+            <span class="signature-card-media">
+
+              {% if block.settings.image != blank %}
+
+                {{
+                  block.settings.image
+                  | image_url: width: 900
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '320, 480, 640, 900',
+                    sizes: '(max-width: 700px) 76vw, 25vw',
+                    alt: image_alt
+                }}
+
+              {% elsif fallback_image != blank %}
+
+                <img
+                  src="{{ fallback_image | asset_url }}"
+                  alt="{{ image_alt | escape }}"
+                  loading="lazy"
+                  width="700"
+                  height="900"
+                >
+
+              {% endif %}
+
+            </span>
+
+            <span class="signature-card-copy">
+              <strong>
+                {{ block.settings.title | escape }}
+              </strong>
+
+              <small>
+                {{ block.settings.subtitle | escape }}
+              </small>
+            </span>
+
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </section>
 </div>
-</div>
-</section>
-</div>
+
 {% schema %}
 {
-  "name":"Zeha — Signature",
-  "max_blocks":4,
-  "settings":[
-    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Die Zeha-Signatur"},
-    {"type":"text","id":"heading","label":"Heading","default":"Bedeutungsvolle Symbole, persönlich gemacht."},
-    {"type":"textarea","id":"text","label":"Text","default":"Unsere orientalisch inspirierte Kollektion bringt Zehas spirituelle und kulturelle Wurzeln in eine moderne, elegante Garderobe – persönliche Schmuckstücke, die dich jeden Tag begleiten."},
-    {"type":"text","id":"button_label","label":"Button","default":"Orientalischen Schmuck entdecken"},
-    {"type":"url","id":"button_link","label":"Button link"}
+  "name": "Zeha — Signature",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Die Zeha-Signatur"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Bedeutungsvolle Symbole, persönlich gemacht."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Unsere orientalisch inspirierte Kollektion bringt Zehas spirituelle und kulturelle Wurzeln in eine moderne, elegante Garderobe – persönliche Schmuckstücke, die dich jeden Tag begleiten."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button",
+      "default": "Orientalischen Schmuck entdecken"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
   ],
-  "blocks":[{"type":"item","name":"Signature item","settings":[{"type":"text","id":"title","label":"Title","default":"Ayatul Kursi"},{"type":"text","id":"subtitle","label":"Subtitle","default":"Glaube & Trost"},{"type":"url","id":"link","label":"Link"}]}],
-  "presets":[{"name":"Zeha — Signature","blocks":[{"type":"item"},{"type":"item"},{"type":"item"},{"type":"item"}]}]
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Signature item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Ayatul Kursi"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Glaube & Trost"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeha — Signature",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

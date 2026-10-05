@@ -1,23 +1,338 @@
 {% render 'zeha-assets' %}
+
+{%- liquid
+  assign google_url = section.settings.google_url
+
+  if google_url == blank
+    assign google_url = 'https://www.google.com/maps/place/zehajewelry.de/@48.8909244,8.7695328,7z/data=!4m8!3m7!1s0x23e672307d9f338d:0x1190c20e7242bdc6!8m2!3d48.9174141!4d11.408007!9m1!1b1!16s%2Fg%2F11yfswgr1k?entry=ttu'
+  endif
+-%}
+
 <div class="zeha-scope">
-<section aria-labelledby="reviews-title-{{ section.id }}" class="reviews" data-reviews="{% if section.settings.demo %}demo{% else %}real{% endif %}" id="reviews">
-<div class="container">
-<div class="section-heading reveal"><div><span class="eyebrow">{{ section.settings.eyebrow | escape }}</span><h2 id="reviews-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2></div><div>{% if section.settings.demo %}<p class="review-preview-note"><strong>{{ section.settings.demo_label | escape }}</strong>{{ section.settings.demo_text | escape }}</p>{% endif %}</div></div>
-<div class="review-grid">
-{% for block in section.blocks %}<article class="review-card reveal" {{ block.shopify_attributes }}><div aria-label="{{ block.settings.rating }} von 5 Sternen" class="review-stars">{% assign rating = block.settings.rating | default: 5 %}{% for i in (1..rating) %}★{% endfor %}</div><blockquote>„{{ block.settings.quote | escape }}“</blockquote><div class="review-author"><div><strong>{{ block.settings.author | escape }}</strong><span>{{ block.settings.product | escape }}</span></div><span aria-hidden="true" class="review-initial">{{ block.settings.initial | escape }}</span></div></article>{% endfor %}
+  <section
+    class="reviews zeha-google-reviews"
+    id="reviews-{{ section.id }}"
+    aria-labelledby="reviews-title-{{ section.id }}"
+    data-zeha-reviews-slider
+  >
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <div>
+          <span class="eyebrow">
+            {{ section.settings.eyebrow | escape }}
+          </span>
+
+          <h2 id="reviews-title-{{ section.id }}">
+            {{ section.settings.heading | escape }}
+          </h2>
+        </div>
+
+        <a
+          class="review-google-summary"
+          href="{{ google_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="{{ section.settings.google_aria_label | escape }}"
+        >
+          <span class="review-google-mark" aria-hidden="true">
+            G
+          </span>
+
+          <span class="review-google-summary__content">
+            <strong>
+              {{ section.settings.google_rating | escape }} ★
+            </strong>
+
+            <small>
+              {{ section.settings.google_count | escape }}
+            </small>
+          </span>
+
+          <span class="review-google-arrow" aria-hidden="true">
+            ↗
+          </span>
+        </a>
+      </div>
+
+      <div class="review-slider reveal">
+
+        <div class="swiper zeha-reviews-swiper">
+
+          <div class="swiper-wrapper">
+
+            {%- for block in section.blocks -%}
+
+              {%- liquid
+                assign review_url = block.settings.review_url | default: google_url
+                assign author_initial = block.settings.author | slice: 0, 1 | upcase
+                assign avatar_alt = block.settings.avatar_alt | default: block.settings.author
+                assign rating = block.settings.rating | default: 5
+              -%}
+
+              <div
+                class="swiper-slide"
+                {{ block.shopify_attributes }}
+              >
+
+                <article class="review-card">
+
+                  <a
+                    class="review-card__link"
+                    href="{{ review_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Google Rezension von {{ block.settings.author | escape }} öffnen"
+                  >
+
+                    <div class="review-card__top">
+
+                      <div
+                        class="review-stars"
+                        aria-label="{{ rating }} von 5 Sternen"
+                      >
+                        {%- for i in (1..5) -%}
+                          <span aria-hidden="true">
+                            {%- if i <= rating -%}
+                              ★
+                            {%- else -%}
+                              ☆
+                            {%- endif -%}
+                          </span>
+                        {%- endfor -%}
+                      </div>
+
+                      <span class="review-source">
+                        Google
+                      </span>
+
+                    </div>
+
+                    <blockquote class="review-card__quote">
+                      „{{ block.settings.quote | escape }}“
+                    </blockquote>
+
+                    <div class="review-author">
+
+                      <div class="review-author__profile">
+
+                        <span class="review-avatar">
+
+                          {%- if block.settings.avatar != blank -%}
+
+                            {{
+                              block.settings.avatar
+                              | image_url: width: 96
+                              | image_tag:
+                                loading: 'lazy',
+                                widths: '48,72,96',
+                                sizes: '38px',
+                                alt: avatar_alt,
+                                class: 'review-avatar__image'
+                            }}
+
+                          {%- elsif block.settings.avatar_url != blank -%}
+
+                            <img
+                              src="{{ block.settings.avatar_url | escape }}"
+                              alt="{{ avatar_alt | escape }}"
+                              width="38"
+                              height="38"
+                              loading="lazy"
+                              referrerpolicy="no-referrer"
+                              class="review-avatar__image"
+                            >
+
+                          {%- else -%}
+
+                            <span class="review-initial">
+                              {{ author_initial }}
+                            </span>
+
+                          {%- endif -%}
+
+                        </span>
+
+                        <span class="review-author__copy">
+
+                          <strong>
+                            {{ block.settings.author | escape }}
+                          </strong>
+
+                          <span>
+                            {{ block.settings.meta | escape }}
+                          </span>
+
+                        </span>
+
+                      </div>
+
+                      <span
+                        class="review-card__external"
+                        aria-hidden="true"
+                      >
+                        ↗
+                      </span>
+
+                    </div>
+
+                  </a>
+
+                </article>
+
+              </div>
+
+            {%- endfor -%}
+
+          </div>
+
+        </div>
+
+        {%- if section.blocks.size > 1 -%}
+
+          <div class="review-slider__controls">
+
+            <button
+              type="button"
+              class="review-slider__button review-slider__button--prev"
+              data-zeha-reviews-prev
+              aria-label="Vorherige Bewertungen"
+            >
+              <span aria-hidden="true">
+                ←
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="review-slider__button review-slider__button--next"
+              data-zeha-reviews-next
+              aria-label="Nächste Bewertungen"
+            >
+              <span aria-hidden="true">
+                →
+              </span>
+            </button>
+
+          </div>
+
+        {%- endif -%}
+
+      </div>
+
+    </div>
+  </section>
 </div>
-</div>
-</section>
-</div>
+
 {% schema %}
 {
-  "name":"Zeha — Reviews",
-  "max_blocks":3,
-  "settings":[
-    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Ein kleiner Liebesgruß"},{"type":"text","id":"heading","label":"Heading","default":"Bedeutungsvolle Stücke, jeden Tag geliebt."},
-    {"type":"checkbox","id":"demo","label":"Show demo notice","default":true},{"type":"text","id":"demo_label","label":"Demo label","default":"Demo-Inhalte"},{"type":"textarea","id":"demo_text","label":"Demo text","default":"Diese Beispielstimmen zeigen das Layout. Vor dem Launch bitte durch verifizierte Kundenbewertungen ersetzen."}
+  "name": "Zeha — Google Reviews",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Stimmen unserer Kundinnen"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Von Kundinnen getragen. Auf Google geliebt."
+    },
+    {
+      "type": "text",
+      "id": "google_rating",
+      "label": "Google rating",
+      "default": "5.0"
+    },
+    {
+      "type": "text",
+      "id": "google_count",
+      "label": "Google review count",
+      "default": "7 Google Bewertungen"
+    },
+    {
+      "type": "url",
+      "id": "google_url",
+      "label": "Google Maps link"
+    },
+    {
+      "type": "text",
+      "id": "google_aria_label",
+      "label": "Google link accessibility label",
+      "default": "Alle Google Bewertungen von Zeha Jewelry öffnen"
+    }
   ],
-  "blocks":[{"type":"review","name":"Review","settings":[{"type":"range","id":"rating","label":"Rating","min":1,"max":5,"step":1,"default":5},{"type":"textarea","id":"quote","label":"Quote","default":"Die Ayatul-Kursi-Kette fühlt sich sehr persönlich an und wirkt trotzdem zart zu meinen Alltagsoutfits."},{"type":"text","id":"author","label":"Author","default":"Amira K."},{"type":"text","id":"product","label":"Product","default":"Ayatul-Kursi-Kette"},{"type":"text","id":"initial","label":"Initial","default":"A"}]}],
-  "presets":[{"name":"Zeha — Reviews","blocks":[{"type":"review"},{"type":"review"},{"type":"review"}]}]
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Google review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Review text"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Meta text",
+          "default": "Google Rezension"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Author photo"
+        },
+        {
+          "type": "text",
+          "id": "avatar_url",
+          "label": "External author photo URL"
+        },
+        {
+          "type": "text",
+          "id": "avatar_alt",
+          "label": "Author photo alt text"
+        },
+        {
+          "type": "url",
+          "id": "review_url",
+          "label": "Google review link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeha — Google Reviews",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

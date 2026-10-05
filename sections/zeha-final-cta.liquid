@@ -1,5 +1,5 @@
 {% render 'zeha-assets' %}
-<div class="zeha-scope"><section aria-labelledby="final-title-{{ section.id }}" class="final-cta"><div class="container final-cta-inner reveal"><span class="eyebrow">{{ section.settings.eyebrow | escape }}</span><h2 id="final-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2><p>{{ section.settings.text | escape }}</p><a class="button button-primary" href="{{ section.settings.button_link | default: '#bestsellers' }}">{{ section.settings.button_label | escape }} <span aria-hidden="true">↗</span></a></div></section></div>
+<div class="zeha-scope"><section aria-labelledby="final-title-{{ section.id }}" class="final-cta"><div class="container final-cta-inner reveal"><span class="eyebrow">{{ section.settings.eyebrow | escape }}</span><h2 id="final-title-{{ section.id }}">{{ section.settings.heading | escape }}</h2><p>{{ section.settings.text | escape }}</p><a class="button button-primary"  href="{{ section.settings.button_link | default: '' }}">{{ section.settings.button_label | escape }} <span aria-hidden="true">↗</span></a></div></section></div>
 {% schema %}
 {
   "name":"Zeha — Final CTA",

@@ -4,7 +4,35 @@
   <div class="container value-grid">
     {%- for block in section.blocks -%}
       <div class="value-item reveal" {{ block.shopify_attributes }}>
-        <span class="value-icon">{{ block.settings.icon }}</span>
+        <span class="value-icon" aria-hidden="true">
+			{%- case forloop.index -%}
+				{%- when 1 -%}
+				<svg viewBox="0 0 24 24">
+					<path d="m12 2.8 2.35 6.85L21.2 12l-6.85 2.35L12 21.2l-2.35-6.85L2.8 12l6.85-2.35L12 2.8Z"/>
+					<path d="M19 2.5v3m-1.5-1.5h3"/>
+				</svg>
+
+				{%- when 2 -%}
+				<svg viewBox="0 0 24 24">
+					<path d="M4 20h16M6.5 20v-9a5.5 5.5 0 0 1 11 0v9"/>
+					<path d="M10 20v-4a2 2 0 0 1 4 0v4"/>
+					<path d="M12 5V3"/>
+				</svg>
+
+				{%- when 3 -%}
+				<svg viewBox="0 0 24 24">
+					<path d="M12 3 19 6v5c0 4.2-2.5 7.3-7 10-4.5-2.7-7-5.8-7-10V6l7-3Z"/>
+					<path d="M7.5 12.5c1.4-1.5 2.6-1.5 4 0s2.6 1.5 4 0"/>
+					<path d="M12 8v1"/>
+				</svg>
+
+				{%- when 4 -%}
+				<svg viewBox="0 0 24 24">
+					<path d="M3 10h18v11H3zM2 7h20v3H2zM12 7v14"/>
+					<path d="M12 7H7.5a2.5 2.5 0 1 1 2.5-2.5C10 6 12 7 12 7Zm0 0h4.5a2.5 2.5 0 1 0-2.5-2.5C14 6 12 7 12 7Z"/>
+				</svg>
+			{%- endcase -%}
+		</span>
         <span class="value-title">{{ block.settings.title | escape }}</span>
         <span class="value-copy">{{ block.settings.text | escape }}</span>
       </div>
